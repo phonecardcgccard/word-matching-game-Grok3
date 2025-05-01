@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式，与index.html中的内联CSS一致 */
+.card {
+    @apply bg-indigo-100 rounded-lg p-2 cursor-pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.card.selected {
+    @apply bg-indigo-200 scale-105;
+}
+
+.card.matched {
+    @apply bg-green-100;
+    cursor: default;
+}
+
+.chinese-font {
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+.columns-grid {
+    @apply grid gap-2;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
